@@ -1,0 +1,251 @@
+body {
+    background-color: #36454F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+.main_container {
+    padding-top: 90px;
+    width: 100%;
+    height: 500px;
+    transition: 2s;
+    animation: movedown 2s 1 forwards;
+    transition: 3s;
+    z-index: 1000;
+    background-color: #36454F;
+}
+
+@keyframes movedown {
+    0% {
+        position: relative;
+        top: -400px;
+    }
+    100% {
+        position: relative;
+        top: 0px;
+    }
+}
+
+.main_container.active {
+    animation: second_moveup 2s 1 forwards;
+}
+
+@keyframes second_moveup {
+    0% {
+        position: relative;
+        top: 0px;
+    }
+    100% {
+        position: relative;
+        top: -400px;
+    }
+}
+
+.intro_container {
+    padding-top: 100px;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    background-color: transparent;
+    opacity: 1;
+    transition: 2s;
+}
+
+.welcome {
+    font-size: 4rem;
+}
+
+.toe {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-left: 620px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+p {
+    animation: rotate 2s infinite alternate;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.p_butt {
+    width: 150px;
+    height: 40px;
+    color: black;
+    border: 2px solid black;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
+.bb {
+    margin-top: 40px;
+    animation: moveup 2s 1 forwards;
+}
+
+@keyframes moveup {
+    0% {
+        position: relative;
+        top: 8000px;
+    }
+    100% {
+        position: relative;
+        top: 0px;
+    }
+}
+
+.bb.active {
+    animation: second_movedown 1.5s forwards;
+    /* opacity: 0; */
+}
+
+@keyframes second_movedown {
+    0% {
+        position: relative;
+        top: 0px;
+    }
+    100% {
+        position: relative;
+        top: 400px;
+    }
+}
+
+.p_butt:hover {
+    font-size: 1.1rem;
+}
+
+@keyframes rotate {
+    0% {
+        rotate: 0deg;
+    }
+    50% {
+        rotate: 90deg;
+    }
+    65% {
+        rotate: 90deg;
+        transform: scaleX(1);
+    }
+    90% {
+        rotate: 90deg;
+        transform: scaleX(3)
+    }
+    100% {
+        rotate: 90deg;
+        transform: scaleX(3)
+    }
+}
+
+.game_outter {
+    width: 100%;
+    height: 420px;
+    background-color: #36454F;
+    /* transform: translate(-150%, -50%); */
+    position: relative;
+    left: 100%;
+    z-index: 10;
+    transition: 2s;
+    text-align: center;
+    overflow: visible;
+}
+
+.game {
+    border: 2px solid black;
+    position: relative;
+    top: -60px;
+    margin-left: 560px;
+    border-radius: 7px;
+    width: 400px;
+    height: 400px;
+    background-color: orange;
+    display: grid;
+    place-items: center;
+    transition: 1s;
+    opacity: 1;
+    scale: 1;
+}
+
+.game_outter.active {
+    position: relative;
+    left: 0%;
+    top: -400px;
+}
+
+.outter_game {
+    background-color: black;
+    width: 360px;
+    height: 360px;
+    padding-top: 2px;
+}
+
+.game.active {
+    opacity: 0;
+}
+
+.cell {
+    color: black;
+    height: 115px;
+    width: 115px;
+    background-color: #999;
+    display: inline-block;
+}
+
+.cell:hover {
+    scale: 1.03;
+}
+
+
+/* .cell:hover {
+    transform: scale(1.03);
+} */
+
+.cell:nth-child(2n) {
+    background-color: #F00;
+    /* what property should I use to get a line break after this element? */
+}
+
+
+/* this doesn't work; at least not in safari */
+
+.symbol {
+    display: none;
+    background-color: transparent;
+}
+
+.cell {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    color: transparent;
+}
+
+#clear-button {
+    width: 130px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    transition: 2s;
+}
+
+#clear-button.active {
+    transition: 2s;
+}
+
+.result {
+    width: 600px;
+    height: 70px;
+    background-color: transparent;
+    position: relative;
+    left: 480px;
+    color: white;
+    font-size: 3rem;
+    top: 100px;
+    z-index: -9;
+    animation-delay: 2s;
+}
